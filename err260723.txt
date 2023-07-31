@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\hand_gesture_recognition.py", line 31, in <module>
+    train_dataset = GestureDataset(temp, preprocess)
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\dataset.py", line 11, in __init__
+    self.class_names = sorted(os.listdir(root_dir))
+FileNotFoundError: [WinError 3] Системе не удается найти указанный путь: 'leapGestRecog\\train'
