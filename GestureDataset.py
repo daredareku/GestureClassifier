@@ -19,8 +19,6 @@ class GestureDataset(Dataset):
                                  std=[0.229, 0.224, 0.225])
         ])
 
-
-
     def _make_dataset(self):
         samples = []
         for class_name in self.class_names:
@@ -54,4 +52,5 @@ class GestureDataset(Dataset):
             transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
         ])
+
 '''

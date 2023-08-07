@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\train_save.py", line 20, in <module>
+    dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\utils\data\dataloader.py", line 351, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\utils\data\sampler.py", line 107, in __init__
+    raise ValueError("num_samples should be a positive integer "
+ValueError: num_samples should be a positive integer value, but got num_samples=0

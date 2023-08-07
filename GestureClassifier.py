@@ -19,5 +19,6 @@ class GestureClassifier(nn.Module):
  The pre-trained ResNet-18 CNN is used to extract features from the input image, and the fully connected layer is used to classify the hand gesture.
 
 The forward method takes an input tensor x and passes it through the CNN and the fully connected layer. The output is a tensor of size (batch_size, 10), where 10 
-is the number of hand gestures in the LeapGestRecog dataset.
+is the number of hand gestures in the LeapGestRecog dataset. 
+
 '''

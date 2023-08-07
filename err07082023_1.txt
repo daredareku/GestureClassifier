@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\train_save.py", line 18, in <module>
+    dataset = GestureDataset(root_dir)
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\GestureDataset.py", line 13, in __init__
+    self.samples = self._make_dataset()
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\GestureDataset.py", line 26, in _make_dataset
+    for filename in os.listdir(class_dir):
+NotADirectoryError: [WinError 267] Неверно задано имя папки: 'E:\\1\\Downloads\\1\\Downloads\\2023\\Geekbrains\\DIPLOMA\\GestureClassifier.\\.gitignore'

@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\train_model.py", line 18, in <module>
+    train_dataset = GestureDataset('leapGestRecog/train')
+TypeError: GestureDataset.__init__() missing 1 required positional argument: 'controller'

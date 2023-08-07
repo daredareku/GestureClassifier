@@ -1,4 +1,3 @@
-#
 import os
 import torch
 import torchvision.transforms as transforms
@@ -18,8 +17,6 @@ class GestureDataset(Dataset):
             transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                  std=[0.229, 0.224, 0.225])
         ])
-
-
 
     def _make_dataset(self):
         samples = []
@@ -41,17 +38,9 @@ class GestureDataset(Dataset):
         image = self.transform(image)
         return image, label
 
-'''
-    def __init__(self, root_dir, controller):
-        self.root_dir = root_dir
-        self.class_names = sorted(os.listdir(root_dir))
-        self.class_to_idx = {class_name: i for i, class_name in enumerate(self.class_names)}
-        self.samples = self._make_dataset()
+# Change directory to the specified root_dir
+root_dir = r'E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\leapGestRecog'
+os.chdir(root_dir)
 
-        self.transform = transforms.Compose([
-            transforms.Resize((224, 224)),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                 std=[0.229, 0.224, 0.225])
-        ])
-'''
+# Create the dataset instance
+dataset = GestureDataset('.')
