@@ -1,6 +1,9 @@
 import cv2
 import numpy as np 
 import os
+import tensorflow as tf
+
+tf.config.run_functions_eagerly(True)
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Flatten, Conv2D
@@ -30,7 +33,7 @@ for label in labels:
 encoded_labels = np.array(encoded_labels)
 
 # Define and train model
-model = Sequential()
+model = tf.keras.Sequential()
 model.add(Conv2D(32, kernel_size=(3, 3), activation='relu', input_shape=(224, 224, 3)))
 model.add(Flatten())
 model.add(Dense(10, activation='softmax'))
