@@ -25,28 +25,29 @@ model.fc = torch.nn.Linear(512, 10) # 10 gesture classes
 cap = cv2.VideoCapture(0)
 
 while True:
-    # Read frame
-    ret, frame = cap.read()
-    
-    # Preprocess
-    img = torchvision.transforms.ToTensor()(frame)
-    
-    # Classify gesture
-    output = model(img.unsqueeze(0)) 
-    pred = output.argmax(dim=1).item()
-    
-    # Get gesture name
-    # Get gesture name  
-    gesture = gesture_map.get(pred, "Undefined")
-    '''if pred == 0: 
-        gesture = 'Palm'
-    elif pred == 1:
-        gesture = 'L'
-    '''
+    for i in range(2): 
+        # Read frame
+        ret, frame = cap.read()
         
-    # Display 
-    cv2.putText(frame, gesture, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
-    cv2.imshow('Gesture Recognition', frame)
+        # Preprocess
+        img = torchvision.transforms.ToTensor()(frame)
+        
+        # Classify gesture
+        output = model(img.unsqueeze(0)) 
+        pred = output.argmax(dim=1).item()
+        
+        # Get gesture name
+        # Get gesture name  
+        gesture = gesture_map.get(pred, "Undefined")
+        '''if pred == 0: 
+            gesture = 'Palm'
+        elif pred == 1:
+            gesture = 'L'
+        '''
+            
+        # Display 
+        cv2.putText(frame, gesture, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+        cv2.imshow('Gesture Recognition', frame)
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
