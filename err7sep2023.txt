@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\h5react.py", line 21, in <module>
+    model = torch.load('gesture_recognition_model.h5')
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 815, in load
+    return _legacy_load(opened_file, map_location, pickle_module, **pickle_load_args)
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\serialization.py", line 1033, in _legacy_load
+    magic_number = pickle_module.load(f, **pickle_load_args)
+_pickle.UnpicklingError: invalid load key, 'H'.

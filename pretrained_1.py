@@ -13,7 +13,7 @@ model = torchvision.models.resnet18(pretrained=True)
 model.fc = torch.nn.Linear(512, len(gesture_map))
 
 # Load model weights 
-model.load_state_dict(torch.load('model.pth'))
+model.load_state_dict(torch.load('leapGestRecog/00')) #model.pth'))
 
 # Transformer 
 transform = transforms.Compose([
