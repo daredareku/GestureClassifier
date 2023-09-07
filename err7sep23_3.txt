@@ -1,0 +1,15 @@
+2023-09-07 20:47:09.991387: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2023-09-07 20:47:10.809498: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2776 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1050 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1
+Traceback (most recent call last):
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\sample_code_pth.py", line 32, in <module>
+    output = model(image.unsqueeze(0))
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\GestureRecognitionModelpth.py", line 27, in forward
+    x = self.fc1(x)
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\vital.DESKTOP-VE61DMS\AppData\Local\Programs\Python\Python310\lib\site-packages\torch\nn\modules\linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (1x401408 and 32768x128)

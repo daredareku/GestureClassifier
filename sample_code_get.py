@@ -6,7 +6,7 @@ from model import GestureClassifier # Your PyTorch model
 
 # Load the pre-trained model
 model = GestureClassifier()
-model.load_state_dict(torch.load('model.pth'))
+model.load_state_dict(torch.load('gesture_recognition_model.pth'))
 model.eval()
 
 # Set up the webcam
