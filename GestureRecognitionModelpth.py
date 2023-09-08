@@ -45,4 +45,5 @@ for tf_layer, torch_layer in zip(tf_model.layers, pytorch_model.modules()):
             torch_layer.bias.data = torch.from_numpy(tf_weights[1])
 
 # Save the PyTorch model
+print('Saving .pth file...')
 torch.save(pytorch_model.state_dict(), 'gesture_recognition_model.pth')

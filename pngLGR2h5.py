@@ -50,7 +50,6 @@ for gesture_class in range(num_classes):
                 image_file = f'frame_{gesture_class:02d}_10_{i:04d}.png'
             else:
                 image_file = f'frame_{gesture_class:02d}_{str(j).zfill(2)}_{i:04d}.png'
-            #image_file = f'frame_{gesture_class:02d}_{j:-02d}_{i:04d}.png' # Modified line # f'frame_00_0{j}_0{i}.png' # frame_00_01_0001.png  file{i}.png' :4 
             image_path = os.path.join(class_dir, image_file)
             image = cv2.imread(image_path)
             try:
@@ -93,4 +92,5 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 model.fit(X_train, y_train, batch_size=32, epochs=10, validation_data=(X_test, y_test))
 
 # Save the trained model
+print('Saving .h5 file...')
 model.save('gesture_recognition_model.h5')

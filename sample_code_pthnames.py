@@ -18,8 +18,11 @@ gesture_map = {
     9: 'Down'
 }
 
+# Set the number of gesture classes
+num_classes = 10
+
 # Load the pre-trained model
-model = GestureClassifier(10)
+model = GestureClassifier(num_classes)
 model.load_state_dict(torch.load('gesture_recognition_model.pth'))
 model.eval()
 
@@ -34,29 +37,34 @@ preprocess = transforms.Compose([
     transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
 ])
 
-while True:
-    # Capture the image from the webcam
-    ret, frame = cap.read()
+try:
+    print('Press Ctrl-C for exit:')
+    while True:
+        # Capture the image from the webcam
+        ret, frame = cap.read()
 
-    # Preprocess the image
-    image = preprocess(frame)
+        # Preprocess the image
+        image = preprocess(frame)
 
-    # Make a prediction
-    with torch.no_grad():
-        output = model(image.unsqueeze(0))
-        prediction = torch.argmax(output, dim=1).item()
+        # Make a prediction
+        with torch.no_grad():
+            output = model(image.unsqueeze(0))
+            prediction = torch.argmax(output, dim=1).item()
 
-    # Get gesture name
-    gesture = gesture_map.get(prediction, "Undefined")
+        # Get gesture name
+        gesture = gesture_map.get(prediction, "Undefined")
 
-    # Display the prediction
-    cv2.putText(frame, gesture, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-    cv2.imshow('Hand Gesture Recognition', frame)
+        # Display the prediction
+        cv2.putText(frame, gesture, (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        cv2.imshow('Hand Gesture Recognition', frame)
 
-    # Exit on 'q' key press
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
+        # Exit on 'q' key press or Ctrl-C
+        key = cv2.waitKey(1)
+        if key & 0xFF == ord('q') or key == 27:  # 'q' key or Esc key
+            break
+except KeyboardInterrupt:
+    pass
+    
 # Clean up
 cap.release()
 cv2.destroyAllWindows()
