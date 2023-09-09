@@ -21,7 +21,7 @@ gesture_map = {
 }
 
 # Set the path to the LeapGestRecog dataset directory
-dataset_dir = 'leapGestRecog' # path/to/
+dataset_dir = 'leapGestRecog' # path to
 
 # Set the image dimensions
 img_width, img_height = 64, 64

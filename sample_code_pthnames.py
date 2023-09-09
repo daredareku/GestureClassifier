@@ -1,5 +1,6 @@
 #
 import cv2
+import tensorflow as tf
 import torch
 import torchvision.transforms as transforms
 from GestureRecognitionModelpth1 import GestureRecognitionModel as GestureClassifier
@@ -38,6 +39,8 @@ preprocess = transforms.Compose([
 ])
 
 try:
+    print('tensorflow '+tf.__version__)
+    print('torch '+torch.__version__)
     print('Press Ctrl-C for exit:')
     while True:
         # Capture the image from the webcam
