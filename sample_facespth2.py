@@ -56,6 +56,10 @@ try:
         # Detect faces in the frame
         faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
 
+        gesture= "Undefined"  # Initialize gesture variable
+        x=0
+        y=0
+
         for (x, y, w, h) in faces:
             # Draw a rectangle around the face
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
@@ -73,8 +77,8 @@ try:
             # Get gesture name
             gesture = gesture_map.get(gesture_prediction, "Undefined")
 
-            # Display the gesture prediction
-            cv2.putText(frame, gesture, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+        # Display the gesture prediction
+        cv2.putText(frame, gesture, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
 
         # Display the frame
         cv2.imshow('Hand Gesture Recognition', frame)
