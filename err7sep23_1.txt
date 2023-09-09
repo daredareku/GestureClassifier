@@ -1,7 +1,0 @@
-2023-09-07 20:12:55.049663: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX
-To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2023-09-07 20:12:55.846009: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2776 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1050 Ti, pci bus id: 0000:01:00.0, compute capability: 6.1
-Traceback (most recent call last):
-  File "E:\1\Downloads\1\Downloads\2023\Geekbrains\DIPLOMA\GestureClassifier\h5topth.py", line 41, in <module>
-    torch_layer.weight.data = torch.from_numpy(tf_layer.get_weights()[0])
-IndexError: list index out of range
