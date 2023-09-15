@@ -78,10 +78,25 @@ try:
 
         # Display the frame
         cv2.imshow('Hand Gesture Recognition', frame)
+        '''        
+        # Draw face rects
+        for (x, y, w, h) in faces: 
+            cv2.rectangle(frame, (x, y), (x+w, y+h), (255, 0, 0), 2)
+
+            # Classify face region
+            face = transform(frame[y:y+h, x:x+w])
+            pred = gesture_model(face.unsqueeze(0))
+            gesture = gesture_map[pred.argmax()]
+            
+            # Draw gesture text 
+            cv2.putText(frame, gesture, (x, y-10), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2) 
+
+        # Show output
+        cv2.imshow('Webcam', frame)
 
         # Capture the image from the webcam
         ret, frame = cap.read()
-
+        '''
         # Preprocess the image
         image = preprocess(frame)
 
